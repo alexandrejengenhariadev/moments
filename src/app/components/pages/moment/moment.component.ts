@@ -22,10 +22,6 @@ export class MomentComponent implements OnInit {
   faEdit = faEdit;
 
   commentForm!: FormGroup;
-
-
-
-
   constructor(
   private momentService: MomentService, 
   private route: ActivatedRoute,
@@ -73,7 +69,7 @@ export class MomentComponent implements OnInit {
 
     this.commentForm.reset();
 
-    formDirective.resetForm()
+    formDirective.resetForm();
 
   }
 

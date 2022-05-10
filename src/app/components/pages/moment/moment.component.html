@@ -16,22 +16,17 @@
         </button>
     </div>
     <div class="comments">
-        <h3>Comentários ({{moment!.comments.length >0 ? moment!.comments.length : 0}})
+        <h3>Comentários ({{moment.comments!.length > 0 ? moment.comments!.length : 0
+            }}):
         
         </h3>
-        <div *ngIf="moment.comments!.length > 0; else noComments">-->
+        <div *ngIf="moment.comments!.length > 0; else noComments">
           
             <div class="comment-container" *ngFor="let comment of moment.comments">
                 <p class="comment">{{comment.text}}</p>
                 <p class="author"><span>por:</span>{{comment.username}}</p>
             </div>
-            <div class="comment-container" >
-                <p class="comment">Texto comentario</p>
-                <p class="author"><span>por:</span>Matheus</p>
-
-
-            </div>
-            
+                      
         </div>
         
         <ng-template #noComments>
@@ -47,6 +42,7 @@
                 formControlName="text" 
                 placeholder="O que você quer comentar?" 
                 required></textarea>
+                
                 <div *ngIf="text.invalid && formDir.submitted" class="validation-error">
                     <p *ngIf="text.errors?.['required']">O Texto é obrigatório</p>
                 </div>
